@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> GoogleMap</title>
+    <style>
+     html { height: 100%; }
+  	body {
+  	 margin: 0; /* Убираем отступы */
+    height: 100%; /* Высота страницы */
+  		background:url(https://walldeco.ua/img/gallery/156/thumbs/thumb_l_26812.jpg); /* Фоновый цвет и фоновый рисунок*/
+  		background-size: cover;
+  		background-position: center;
+  	}
+    .box {
+    display:flex;
+     margin: 0px 10px;
+    }
+   .weatherId{
+   margin: 0px 20px ;
+    }
+    .minfinKurs{
+     margin: 0px 20px ;
+       }
+.sklad{
+color:#D3D3D3}
+    </style>
+
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<h1 class="sklad">Карта складів представництв </h1>
+<div class="box">
+
+    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41910.89424678843!2d31.487560324125184!3d48.96432155115361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d175aeee12bfe1%3A0x4b1eb18646cf1e5c!2z0JvQtdCx0LXQtNC40L0sINCn0LXRgNC60LDRgdGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCAyMDYzNA!5e0!3m2!1sru!2sua!4v1625646844510!5m2!1sru!2sua"
+    width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>-->
+    <iframe src="https://www.google.com/maps/d/embed?mid=1vuphM9JIeLAIiitKNq7ExA-uGkwRX_AJ" width="1040"
+            height="680"></iframe>
+    <div class="weatherId">
+        <script id="weather-forecast-informer"
+                src="https://pogodnik.com/content/js/daily_informer_with_chart.js"></script>
+    </div>
+    <!-- Minfin.com.ua currency informer 350x120 green-->
+    <div class="minfinKurs">
+        <div id="minfin-informer-m1Fn-currency">Загружаем <a href="https://minfin.com.ua/currency/" target="_blank">курсы
+            валют</a> от minfin.com.ua</a></div>
+        <script>
+        var iframe = '<ifra'+'me width="350" height="120" fram'+'eborder="0" src="https://informer.minfin.com.ua/gen/course/?color=green" vspace="0" scrolling="no" hspace="0" allowtransparency="true"style="width:350px;height:120px;ove'+'rflow:hidden;"></iframe>';var cl = 'minfin-informer-m1Fn-currency';document.getElementById(cl).innerHTML = iframe;
+
+        </script>
+        <noscript><img src="https://informer.minfin.com.ua/gen/img.png" width="1" height="1"
+                       alt="minfin.com.ua: курсы валют" title="Курс валют" border="0"/></noscript>
+        <!-- Minfin.com.ua currency informer 350x120 green-->
+    </div>
+</div>
+<div th:insert="blocks/footer::footer"></div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Нова Пошта</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+     html { height: 100%; }
+  	body {
+  	 margin: 0; /* Убираем отступы */
+    height: 100%; /* Высота страницы */
+  		background:url(https://storage1.censor.net/images/1/6/4/e/164ed1f811b606584eb2f80de16be2dc/original.jpg); /* Фоновый цвет и фоновый рисунок*/
+  		background-position: left 400px top;
+  		background-size: cover;
+
+  	}
+  	}
+  	.boxNp{
+  	color:#FFFFF0;
+  	}
+  	.Vartist,
+  	 .grn{
+  	color:#FFFFF0;
+  	}
+.qwerty1{
+color:#FFFFF0;
+}
+
+.perevirka{
+color:#FFFFF0;
+}
+
+
+
+
+
+    </style>
+    <link rel='stylesheet'
+          href='https://apimgmtstorelinmtekiynqw.blob.core.windows.net/content/MediaLibrary/Widget/Tracking/styles/tracking.css'/>
+    <link rel='stylesheet'
+          href='https://apimgmtstorelinmtekiynqw.blob.core.windows.net/content/MediaLibrary/Widget/Calc/styles/calc.css'/>
+    <link rel='stylesheet'
+          href='https://apimgmtstorelinmtekiynqw.blob.core.windows.net/content/MediaLibrary/Widget/Terms/styles/terms.css'/>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-8">
+    <div class="Vartist">
+        <span>  Варість доставки :</span> <span th:text="${test.distance * test.tarif}"> </span> <span> грн.</span>
+        <br/>
+        <a href="/np"> Назад </a>
+        <br/>
+        <br/>
+    </div>
+    <div class="boxNp">
+    <div>
+        <h3 class="qwerty1"> Розрахунок вартості відправлення</h3>
+        <div id="np-calc-body" class="np-widget-hz np-w-br-12"
+             style="position: absolute;right 50:px;min-height: 81px; width: 806px;">
+
+            <div class="np-calc-wrapper">
+                <div class="np-calc-logotype"></div>
+                <div class="np-hl"></div>
+                <span id="np-calc-title"> <span class="np-calc-title-span1">Розрахунок вартості</span> <br> <span
+                        class="np-calc-title-span2">доставки</span> </span>
+                <div class="np-calc-list">
+                    <div class="np-calc-field" name="dispatch" role="CitySender"><input type="text"
+                                                                                        class="np-option-search-item np-option-search-item1"
+                                                                                        placeholder="Звідки">
+                        <div class="np-toggle-options-list"></div>
+                        <ul class="np-options-enter-point" role="CitySender"></ul>
+                    </div>
+                    <div id="np-arrows" name=""></div>
+                    <div class="np-calc-field" name="catch" role="CityRecipient"><input type="text"
+                                                                                        class="np-option-search-item np-option-search-item2"
+                                                                                        placeholder="Куди">
+                        <div class="np-toggle-options-list"></div>
+                        <ul class="np-options-enter-point" role="CityRecipient"></ul>
+                    </div>
+                    <div class="np-calc-field" name="weight" role="Weight"><input type="text"
+                                                                                  class="np-option-search-item-weight"
+                                                                                  placeholder="Вага посилки"></div>
+                </div>
+                <div class="np-line-background"></div>
+                <button id="np-calc-submit" type="button"><span id="np-text-button">Розрахувати</span>
+                    <div id="np-load-image"></div>
+                </button>
+            </div>
+            <div id="np-cost-field">
+                <div class="np-cost-field-container"><p id="np-cost-number"></p> <span>грн</span></div>
+                <div class="np-cost-info-container"><span
+                        class="np-cost-info-container-cost">Вартість доставки</span><br>
+                    <div id="np-current-city"></div>
+                    <span class="np-current-city-weight">вагою</span> <span id="np-current-weight"></span>
+                    <span>кг</span>
+                </div>
+                <div class="np-mini-logo">
+                    <div class="np-line-left"></div>
+                    <div class="np-line-right"></div>
+                </div>
+                <a id="np-detail-cost"
+                   href="https://novaposhta.ua/delivery?utm_source=calc&amp;utm_medium=widget&amp;utm_term=calc&amp;utm_content=widget&amp;utm_campaign=NP"
+                   target="_blank">Детальний розрахунок</a>
+                <button type="button" class="return-button" id="np-cost-return-button">Інша посилка</button>
+            </div>
+            <div id="np-error-field">
+                <div class="np-status-logo"><img
+                        src="https://apimgmtstorelinmtekiynqw.blob.core.windows.net/content/MediaLibrary/Widget/img/not-found.svg"
+                        alt="error icon"></div>
+                <div class="np-error-info-container"><span class="np-error-info-container-span">Вибачте!З технічних причин ми не змогли розрахувати Вартість посилки</span>
+                </div>
+                <div class="np-mini-logo">
+                    <div class="np-line-left"></div>
+                    <div class="np-line-right"></div>
+                </div>
+                <button type="button" class="return-button" id="np-error-return-button">Інша посилка</button>
+            </div>
+        </div>
+
+        <br>
+        <br> <br> <br>
+        <h3 class="perevirka">Перевірка статусу відправлення</h3>
+        <div id="np-tracking" class="np-widget-hz np-w-br-12" style="width: 534px; min-height: 100px;">
+
+            <div id="np-first-state">
+                <div id="np-tracking-logo"></div>
+                <div id="np-title">
+                    <div class="np-h1"><span class="np-h1-span1">ВІДСТЕЖЕННЯ</span> <br> <span
+                            class="np-h1-span2">ПОСИЛОК</span></div>
+                </div>
+                <div id="np-input-container">
+                    <div id="np-clear-input"></div>
+                    <input id="np-user-input" type="text" name="number" placeholder="Номер посилки"></div>
+                <div id="np-warning-message"></div>
+                <button id="np-submit-tracking" type="button" disabled=""
+                        style="background-color: rgb(209, 213, 218); border: 1px solid rgb(196, 196, 196);"><span
+                        id="np-text-button-tracking">ВІДСТЕЖИТИ</span>
+                    <div id="np-load-image-tracking"></div>
+                </button>
+                <div id="np-error-status"></div>
+            </div>
+            <div id="np-second-state">
+                <div id="np-status-icon"></div>
+                <div id="np-status-message"></div>
+                <div class="np-track-mini-logo">
+                    <div class="np-line-right"></div>
+                    <div class="np-line-left"></div>
+                </div>
+                <a href="#" id="np-more">Детальніше на сайті</a>
+                <div id="np-return-button"><span id="np-return-button-span">Інша посилка</span></div>
+            </div>
+        </div>
+        <br>
+    </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br>
+    <br>
+    <div id="np-term">
+        <button type="button" id="npw-term-open-button" style="width: 206px;" class="">УМОВИ НАДАННЯ ПОСЛУГ</button>
+    </div>
+</div>
+</div>
+<script type='text/javascript' id='track' charset='utf-8' data-lang='ua' apiKey='99e6a4a772cbc8cdf59053f606689b85'
+        data-town='undefined' data-town-name='undefined' data-town-id='undefined'
+        src='https://apimgmtstorelinmtekiynqw.blob.core.windows.net/content/MediaLibrary/Widget/Tracking/dist/track.min.js'></script>
+<script type='text/javascript' id='calc' charset='utf-8' data-lang='ua' apiKey='99e6a4a772cbc8cdf59053f606689b85'
+        data-town='city-not-default' data-town-name='undefined' data-town-id='undefined'
+        src='https://apimgmtstorelinmtekiynqw.blob.core.windows.net/content/MediaLibrary/Widget/Calc/dist/calc.min.js'></script>
+<script type='text/javascript' id='terms' charset='utf-8' data-lang='ua' apiKey='99e6a4a772cbc8cdf59053f606689b85'
+        data-town='undefined' data-town-name='undefined' data-town-id='undefined'
+        src='https://apimgmtstorelinmtekiynqw.blob.core.windows.net/content/MediaLibrary/Widget/Terms/dist/terms.min.js'></script>
+<div th:insert="blocks/footer::footer"></div>
+
+</body>
+
+
+</html>

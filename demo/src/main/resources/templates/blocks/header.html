@@ -1,0 +1,49 @@
+<div th:fragment="header" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+            <!--  <span class="fs-4">Мейн тайтл</span>-->
+
+        </a>
+        <style>
+
+        #exit,#cont,#np,#map,#main,#incoterms{
+        color: #A9A9A9;
+        }
+
+        #exit:hover{
+        background: #FA8072;
+        }
+
+        #exit:hover,
+        #incoterms:hover,
+        #cont:hover,
+        #np:hover,
+        #map:hover,
+        #main:hover{
+         color:#708090;
+          -webkit-transform: scale(1.2);
+          -ms-transform: scale(1.2);
+          transform: scale(1.2);
+           transition: 0.5s;
+        }
+
+
+        </style>
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+            <a class="me-3 py-2 text-decoration-none" id="main" href="home">Головна сторінка</a>
+            <a class="me-3 py-2 text-decoration-none" id="np" href="np">Розрахунок</a>
+            <a class="me-3 py-2 text-decoration-none" id="map" href="mapGoogle">Склади</a>
+            <a class="me-3 py-2 text-decoration-none" id="cont" href="contacts">Контакти</a>
+            <a class="me-3 py-2 text-decoration-none" id="incoterms" href="inco">Інкотермс</a>
+
+
+            <form th:action="@{/logout}" method="post">
+                <input class="me-3 py-2 text-dark text-decoration-none" id="exit" type="submit" value="Вихід"/>
+            </form>
+
+
+        </nav>
+    </div>
+
+</div>

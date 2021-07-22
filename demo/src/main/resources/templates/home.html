@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Головна сторінка</title>
+
+    <meta charset="utf-8">
+    <style>
+     html { height: 100%; }
+  	body {
+  	 margin: 0; /* Убираем отступы */
+    height: 100%; /* Высота страницы */
+  		background:url(https://wpapers.ru/wallpapers/avto/16190/1920x1080_%D0%A4%D1%83%D1%80%D0%B0.jpg); /* Фоновый цвет и фоновый рисунок*/
+  		background-size: cover;
+  	}
+  	.fragment:hover{
+  	color:#90EE90;
+  	}
+    .simpleText{
+     font-size: 1.4em;
+    text-align: center;
+    color:#FFFFF0;
+    }
+    .zzr:hover{
+        transition: 0.5s;
+       -webkit-transform: scale(1.2);
+       -ms-transform: scale(1.2);
+       transform: scale(1.2);
+}
+        .qwe{
+        color:#FFFFF0;
+        margin: 50px;
+       font-size: 1.4em;
+        }
+
+
+    </style>
+
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="simpleText">
+    <span> Я створив цей сайт власноруч, за для того, щоб полегшити роботу всього відділу, для зручного пошуку потрібних
+    сайтів, та утиліт, які допомагають в роботі</span><br>
+<br><br><br>
+</div>
+<span class="qwe"> Список корисних утиліт  </span>
+<ul>
+    <li><a class="zzr" target="_blank" href="https://t.me/ZZR88bot"> ЗЗР довідник </a></li>
+    <li><a target="_blank" href="https://cropio.com/d/users/sign_in"> Cropio - відстежуєм наш транспорт</a></li>
+    <li><a target="_blank" href="http://gps.lnz.com.ua/"> Avalon - інший ресурс по відстежуванню нашого транспорту</a></li>
+    <li>
+        <a target="_blank" href="https://www.google.com.ua/maps/dir/%D0%9B%D0%B5%D0%B1%D0%B5%D0%B4%D0%B8%D0%BD,+%D0%A7%D0%B5%D1%80%D0%BA%D0%B0%D1%81%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0,+20634//@48.8809351,31.6358414,10z/data=!4m9!4m8!1m5!1m1!1s0x40d175aeee12bfe1:0x4b1eb18646cf1e5c!2m2!1d31.5267264!2d48.9648065!1m0!3e0?hl=ru">
+            Google карта (пункт А: с. Лебедин) </a></li>
+    <li><a target="_blank" href="inco"> Інкотермс 2020 </a></li>
+    <li><a target="_blank" href="https://new.novaposhta.ua/dashboard/invoices-my"> Особистий кабінет НП (Лимар Д.В)</a></li>
+    <li><a target="_blank" href="https://www.lnz.com.ua/"> Группа компаний ЛНЗ (офіційний сайт)</a></li>
+    <li>
+        <a target="_blank" href="https://lnzweb.com/?utm_source=google&utm_medium=cpc&utm_campaign=ROMAN_%D0%91%D1%80%D0%B5%D0%BD%D0%B4_LNZ&utm_term=%D0%BB%D0%BD%D0%B7%20%D0%B2%D0%B5%D0%B1&gclid=CjwKCAjwruSHBhAtEiwA_qCpprsPpVR-ydfaYx6oVdH0usXrutAEIkaTU1LoaQakJe0HggMLS9GQLxoCyywQAvD_BwE">
+            LNZ Web (Купуй онлайн)</a></li>
+
+</ul>
+<div th:insert="blocks/footer::footer"></div>
+</body>
+
+
+</html>
